@@ -1,0 +1,235 @@
+# 1. Write a function to add integer values of an array
+def add_array(arr):
+    total = 0
+    for i in arr:
+        total += i
+    return total
+# Test the function
+arr = [1, 2, 3, 4, 5]
+print("The sum of the array is:", add_array(arr))
+
+
+
+# 2. Write a function to calculate the average value of an array of integers
+def average_array(arr):
+    if len(arr) == 0:
+        return "The array is empty"
+    total = 0
+    for i in arr:
+        total += i
+    return total / len(arr)
+# Test the function
+arr = [1, 2, 3, 4, 5]
+print("The average of the array is:", average_array(arr))
+
+
+
+
+# 3. Write a program to find the index of an array element
+def find_index(arr, element):
+    for i in range(len(arr)):
+        if arr[i] == element:
+            return i
+    return -1
+# Test the function
+arr = [1, 2, 3, 4, 5]
+element = 3
+print("The index of", element, "in the array is:", find_index(arr, element))
+
+
+
+# 4. Write a function to test if array contains a specific value
+def contains(arr, element):
+    for i in arr:
+        if i == element:
+            return True
+    return False
+# Test the function
+arr = [1, 2, 3, 4, 5]
+element = 3
+print("Does the array contain", element, "?", contains(arr, element))
+element = 6
+print("Does the array contain", element, "?", contains(arr, element))
+
+
+
+
+# 5. Write a function to remove a specific element from an array
+def remove_element(arr, element):
+    if element in arr:
+        arr.remove(element)
+    else:
+        print("Element not found in the array")
+# Test the function
+arr = [1, 2, 3, 4, 5]
+element = 3
+remove_element(arr, element)
+print("Array after removing the element:", arr)
+
+
+
+
+# 6. Write a function to copy an array to another array
+def copy_array(arr1, arr2):
+    arr2 = arr1[:]
+# Test the function
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [6, 7, 8, 9, 10]
+copy_array(arr1, arr2)
+print("Array after copying:", arr2)
+
+
+
+# 7. Write a function to insert an element at a specific position in the array
+def insert_at(arr, element, pos):
+    arr = arr[:pos] + [element] + arr[pos:]
+# Test the function
+arr = [1, 2, 3, 4, 5]
+element = 10
+pos = 2
+insert_at(arr, element, pos)
+print("Array after inserting the element:", arr)
+
+
+
+# 8. Write a function to find the minimum and maximum value of an array
+def min_max(arr):
+    min_val = min(arr)
+    max_val = max(arr)
+    return min_val, max_val
+# Test the function
+arr = [1, 2, 3, 4, 5]
+min_val, max_val = min_max(arr)
+print("Minimum value:", min_val)
+print("Maximum value:", max_val)
+
+
+
+
+# 9. Write a function to reverse an array of integer values
+def reverse_array(arr):
+    arr = arr[::-1]
+# Test the function
+arr = [1, 2, 3, 4, 5]
+reverse_array(arr)
+print("Array after reversing:", arr)
+
+
+
+
+# 10. Write a function to find the duplicate values of an array
+def find_duplicates(arr):
+    duplicates = []
+    for i in arr:
+        if arr.count(i) > 1 and i not in duplicates:
+            duplicates.append(i)
+    return duplicates
+# Test the function
+arr = [1, 2, 2, 3, 4, 4, 5]
+duplicates = find_duplicates(arr)
+print("Duplicate values:", duplicates)
+
+
+
+# 11. Write a program to find the common values between two arrays
+def find_common(arr1, arr2):
+    common = [value for value in arr1 if value in arr2]
+    return common
+# Test the function
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [4, 5, 6, 7, 8]
+common = find_common(arr1, arr2)
+print("Common values:", common)
+
+
+
+
+# 12. Write a method to remove duplicate elements from an array
+def remove_duplicates(arr):
+    arr = list(set(arr))
+    return arr
+# Test the function
+arr = [1, 2, 2, 3, 4, 4, 5]
+unique = remove_duplicates(arr)
+print("Array after removing duplicates:", unique)
+
+
+
+
+#13. Write a method to find the second largest number in an array
+def second_largest(arr):
+    if len(arr) < 2:
+        return "Array must have at least 2 elements"
+    first = second = float('-inf')
+    for num in arr:
+        if num > first:
+            first, second = num, first
+        elif num > second and num < first:
+            second = num
+    if second == float('-inf'):
+        return "Array has no second largest element"
+    return second
+# Test the function
+arr = [1, 2, 3, 4, 5]
+second = second_largest(arr)
+print("Second largest number:", second)
+
+
+
+
+# 15. Write a method to find number of even number and odd numbers in an array
+def count_even_odd(arr):
+    even = odd = 0
+    for num in arr:
+        if num % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+    return even, odd
+# Test the function
+arr = [1, 2, 3, 4, 5]
+even, odd = count_even_odd(arr)
+print("Number of even numbers:", even)
+print("Number of odd numbers:", odd)
+
+
+
+
+# 16. Write a function to get the difference of largest and smallest value
+def diff_largest_smallest(arr):
+    if len(arr) == 0:
+        return "Array must have at least one element"
+    else:
+        return max(arr) - min(arr)
+# Test the function
+arr = [1, 2, 3, 4, 5]
+diff = diff_largest_smallest(arr)
+print("Difference between largest and smallest value:", diff)
+
+
+
+
+# 17. Write a method to verify if the array contains two specified elements(12,23)
+def contains_elements(arr, a, b):
+    return a in arr and b in arr
+# Test the function
+arr = [1, 2, 3, 4, 5, 12, 23]
+if contains_elements(arr, 12, 23):
+    print("Array contains both elements")
+else:
+    print("Array does not contain both elements")
+
+
+
+
+# 18. Write a program to remove the duplicate elements and return the new array
+def remove_duplicates(arr):
+    new_arr = []
+    for num in arr:
+        if num not in new_arr:
+            new_arr.append(num)
+    return new_arr
+# Test the function
+arr = [1, 2, 2, 3, 4, 4, 4, 5]
+new_arr = remove_duplicates(arr)
+print("New array without duplicates:", new_arr)
