@@ -1,0 +1,61 @@
+# 1. Write a function for arithmetic operators(+,-,*,/)
+
+def arithmetic_operators(a, b):
+    print("Addition:", a + b)
+    print("Subtraction:", a - b)
+    print("Multiplication:", a * b)
+    print("Division:", a / b)
+
+arithmetic_operators(10, 5)
+
+
+
+# 2.Write a method for increment and decrement operators(++, --) 
+def increment_decrement_operators(a):
+    print("Increment:", a + 1)
+    print("Decrement:", a - 1)
+
+increment_decrement_operators(10)
+
+
+
+# 3. Write a program to find the two numbers equal or not. 
+def find_equal_numbers(a, b):
+    if a == b:
+        print("The numbers are equal.")
+    else:
+        print("The numbers are not equal.")
+
+find_equal_numbers(10, 10)
+find_equal_numbers(10, 5)
+
+
+
+
+# 4. Program for relational operators (<,<==, >, >==) 
+def relational_operators(a, b):
+    print("Less than:", a < b)
+    print("Less than or equal to:", a <= b)
+    print("Greater than:", a > b)
+    print("Greater than or equal to:", a >= b)
+
+relational_operators(10, 5)
+relational_operators(10, 10)
+
+
+
+
+# 5. Print the smaller and larger number 
+
+def print_smaller_larger_numbers(a, b):
+    if a < b:
+        print("Smaller number:", a)
+        print("Larger number:", b)
+    elif a > b:
+        print("Smaller number:", b)
+        print("Larger number:", a)
+    else:
+        print("The numbers are equal.")
+
+print_smaller_larger_numbers(10, 5)
+print_smaller_larger_numbers(10, 10)
