@@ -1,0 +1,45 @@
+# 1. Define a static variable and access that through a class
+class MyClass:
+    my_var = 10
+    def display(self):
+        print("Value of my_var:", MyClass.my_var)
+# Test the class
+obj = MyClass()
+obj.display()  # Output: Value of my_var: 10
+
+
+
+
+# 2. Define a static variable and access that through a instance
+class MyClass:
+    my_var = 10
+# Test the class
+obj = MyClass()
+print("Value of my_var:", obj.my_var)  # Output: Value of my_var: 10
+
+
+
+
+# 3. Define a static variable and change within the instance
+class MyClass:
+    my_var = 10
+    def change_var(self, new_val):
+        MyClass.my_var = new_val
+# Test the class
+obj = MyClass()
+print("Initial value of my_var:", obj.my_var)  # Output: Initial value of my_var: 10
+obj.change_var(20)
+print("New value of my_var:", obj.my_var)  # Output: New value of my_var: 20
+
+
+
+
+#  4. Define a static variable and change within the class
+class MyClass:
+    my_var = 10
+    def change_var(cls, new_val):
+        cls.my_var = new_val
+# Test the class
+MyClass.change_var(20)
+obj = MyClass()
+print("New value of my_var:", obj.my_var)  # Output: New value of my_var: 20
