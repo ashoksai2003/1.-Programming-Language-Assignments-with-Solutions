@@ -1,0 +1,198 @@
+# 1.
+class MyClass:
+    def __init__(self, arg1=None, arg2=None):
+        """A class with a default constructor, one argument constructor, and two argument constructors"""
+        if arg1 is None and arg2 is None:
+            self.value1 = 0
+            self.value2 = 0
+        elif arg1 is not None and arg2 is None:
+            self.value1 = arg1
+            self.value2 = 0
+        else:
+            self.value1 = arg1
+            self.value2 = arg2
+
+    def __str__(self):
+        """A string representation of the object"""
+        return f"MyClass with value1={self.value1} and value2={self.value2}"
+
+class Main:
+    def main():
+        """The main function to instantiate the class and call all its constructors"""
+        obj1 = MyClass()
+        obj2 = MyClass(1)
+        obj3 = MyClass(1, 2)
+        print(obj1)
+        print(obj2)
+        print(obj3)
+
+if __name__ == "__main__":
+    main()
+
+
+
+------------------------------------>
+
+
+
+# 2. 
+class SuperClass:
+    def __init__(self, arg1=None, arg2=None):
+        """A super class with a default constructor and an argument constructor"""
+        if arg1 is None and arg2 is None:
+            self.value1 = 0
+            self.value2 = 0
+        elif arg1 is not None and arg2 is None:
+            self.value1 = arg1
+            self.value2 = 0
+        else:
+            self.value1 = arg1
+            self.value2 = arg2
+
+class ChildClass(SuperClass):
+    def __init__(self, arg1=None, arg2=None, arg3=None):
+        """A child class with a constructor that calls the super class constructor"""
+        if arg1 is None and arg2 is None and arg3 is None:
+            super().__init__()
+        elif arg1 is not None and arg2 is None and arg3 is None:
+            super().__init__(arg1)
+        else:
+            super().__init__(arg1, arg2)
+            self.value3 = arg3
+
+    def __str__(self):
+        """A string representation of the object"""
+        return f"ChildClass with value1={self.value1}, value2={self.value2}, and value3={self.value3}"
+
+class Main:
+    def main():
+        """The main function to instantiate the child class and call its constructor"""
+        obj1 = ChildClass()
+        obj2 = ChildClass(1)
+        obj3 = ChildClass(1, 2)
+        obj4 = ChildClass(1, 2, 3)
+        print(obj1)
+        print(obj2)
+        print(obj3)
+        print(obj4)
+
+if __name__ == "__main__":
+    main()
+
+
+------------------------------------------->
+
+
+# 3. 
+class SuperClass:
+    # Public constructor
+    def __init__(self, arg1=None, arg2=None):
+        """A public constructor for the super class"""
+        if arg1 is None and arg2 is None:
+            self.value1 = 0
+            self.value2 = 0
+        elif arg1 is not None and arg2 is None:
+            self.value1 = arg1
+            self.value2 = 0
+        else:
+            self.value1 = arg1
+            self.value2 = arg2
+
+    # Protected constructor
+    def __init_protected(self, arg1=None, arg2=None):
+        """A protected constructor for the super class"""
+        if arg1 is None and arg2 is None:
+            self.value1 = 0
+            self.value2 = 0
+        elif arg1 is not None and arg2 is None:
+            self.value1 = arg1
+            self.value2 = 0
+        else:
+            self.value1 = arg1
+            self.__value2_protected = arg2
+
+    # Private constructor
+    def __init_private(self, arg1=None, arg2=None):
+        """A private constructor for the super class"""
+        if arg1 is None and arg2 is None:
+            self.value1 = 0
+            self.__value2_private = 0
+        elif arg1 is not None and arg2 is None:
+            self.value1 = arg1
+            self.__value2_private = 0
+        else:
+            self.value1 = arg1
+            self.__value2_private = arg2
+
+class ChildClass(SuperClass):
+    # Public constructor
+    def __init__(self, arg1=None, arg2=None, arg3=None):
+        """A public constructor for the child class"""
+        if arg1 is None and arg2 is None and arg3 is None:
+            super().__init__()
+        elif arg1 is not None and arg2 is None and arg3 is None:
+            super().__init__(arg1)
+        else:
+            super().__init__(arg1, arg2)
+            self.value3 = arg3
+
+    # Protected constructor
+    def __init_protected(self, arg1=None, arg2=None, arg3=None):
+        """A protected constructor for the child class"""
+        if arg1 is None and arg2 is None and arg3 is None:
+            super().__init_protected()
+        elif arg1 is not None and arg2 is None and arg3 is None:
+            super().__init_protected(arg1)
+        else:
+            super().__init_protected(arg1, arg2)
+            self.__value3_protected = arg3
+
+    # Private constructor
+    def __init_private(self, arg1=None, arg2=None, arg3=None):
+        """A private constructor for the child class"""
+        if arg1 is None and arg2 is None and arg3 is None:
+            super().__init_private()
+        elif arg1 is not None and arg2 is None and arg3 is None:
+            super().__init_private(arg1)
+        else:
+            super().__init_private(arg1, arg2)
+            self.__value3_private = arg3
+
+class Main:
+    def main():
+        """The main function to instantiate the child class and call its constructors"""
+        obj1 = ChildClass()
+        obj2 = ChildClass(1)
+        obj3 = ChildClass(1, 2)
+        obj4 = ChildClass(1, 2, 3)
+        obj5 = ChildClass(1, 2, 3)
+        obj6 = ChildClass(1, 2, 3)
+        obj7 = ChildClass(1, 2, 3)
+
+
+----------------------------------------------->
+
+
+
+
+# 4. 
+class MyClass:
+    def __init__(self, attribute1, attribute2):
+        """A constructor for MyClass that initializes the attributes of an object"""
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    def display_attributes(self):
+        """A method that displays the attributes of an object"""
+        print(f"Attribute 1: {self.attribute1}")
+        print(f"Attribute 2: {self.attribute2}")
+
+class Main:
+    def main():
+        """The main function that creates an object of MyClass and displays its attributes"""
+        my_obj = MyClass("Attribute 1 value", "Attribute 2 value")
+        my_obj.display_attributes()
+
+if __name__ == "__main__":
+    main()
+ 
