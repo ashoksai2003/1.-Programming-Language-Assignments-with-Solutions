@@ -1,0 +1,95 @@
+# 1. Write a program to read text file 
+def read_file(file_path):
+    """Reads a text file and returns its content as a string"""
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return content
+
+file_path = "example.txt"
+file_content = read_file(file_path)
+print(file_content)
+
+
+
+
+
+# 2. Write a program to write text to .txt file using  InputStream 
+def write_to_file(file_path, text):
+    """Writes text to a file, creating it if it doesn't exist"""
+    with open(file_path, 'w') as file:
+        file.write(text)
+
+file_path = "example.txt"
+text_to_write = "This is a test file.\nThis is another line in the file."
+write_to_file(file_path, text_to_write)
+
+
+
+
+# 3. Write a program to read a file stream 
+def read_file_stream(file_path):
+    """Reads a file stream and returns its content as a list of lines"""
+    with open(file_path, 'r') as file:
+        content = file.readlines()
+    return content
+
+file_path = "example.txt"
+file_content = read_file_stream(file_path)
+print(file_content)
+
+
+
+
+# 4. Write a program to read a file stream supports random access 
+def read_random_access_file(file_path, start_index, end_index):
+    """Reads a file stream and returns a substring of its content from the given start index to the end index"""
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return content[start_index:end_index]
+
+file_path = "example.txt"
+start_index = 10
+end_index = 20
+file_content = read_random_access_file(file_path, start_index, end_index)
+print(file_content)
+
+
+
+
+
+# 5. Write a program to read a file a just to a particular index using seek()
+def read_file_at_index(file_path, index):
+    """Reads a file and returns the character at the given index"""
+    with open(file_path, 'r') as file:
+        file.seek(index)
+        content = file.read(1)
+    return content
+
+file_path = "example.txt"
+index = 10
+file_content = read_file_at_index(file_path, index)
+print(file_content)
+
+
+
+
+
+# 6. Write a program to check whether a file is having read access and write access permissions 
+import os
+def check_file_permissions(file_path):
+    """Checks whether a file has read and write access permissions"""
+    file_stat = os.stat(file_path)
+    file_permissions = oct(file_stat.st_mode)[-3:]
+    if "0" in file_permissions:
+        print(f"File {file_path} does not have read permission")
+    elif "1" in file_permissions:
+        print(f"File {file_path} has read permission")
+    if "4" in file_permissions:
+        print(f"File {file_path} does not have write permission")
+    elif "5" in file_permissions:
+        print(f"File {file_path} has write permission")
+
+file_path = "example.txt"
+check_file_permissions(file_path)
+
+
