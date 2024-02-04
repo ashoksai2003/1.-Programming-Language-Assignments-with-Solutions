@@ -1,0 +1,59 @@
+# Code related to all the queries.
+class A:
+    def method_A1(self):
+        print("Method A1 of class A")
+
+    def method_A2(self):
+        print("Method A2 of class A")
+
+    def override_method(self):
+        print("Method override of class A")
+
+class B(A):
+    def method_B1(self):
+        print("Method B1 of class B")
+
+    def method_B2(self):
+        print("Method B2 of class B")
+
+    def override_method(self):
+        super().override_method()
+        print("Method override of class B")
+
+class C(B):
+    def method_C1(self):
+        print("Method C1 of class C")
+
+    def method_C2(self):
+        print("Method C2 of class C")
+
+    def override_method(self):
+        super().override_method()
+        print("Method override of class C")
+
+class Main:
+    def main(self):
+        a = A()
+        b = B()
+        c = C()
+
+        a.method_A1()
+        a.method_A2()
+        a.override_method()
+
+        b.method_B1()
+        b.method_B2()
+        b.override_method()
+
+        c.method_C1()
+        c.method_C2()
+        c.override_method()
+
+        a_ref = B()
+        a_ref.override_method()
+
+        b_ref = C()
+        b_ref.override_method()
+
+if __name__ == '__main__':
+    Main().main()
