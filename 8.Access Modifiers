@@ -1,0 +1,79 @@
+# 1.
+class A:
+    def __init__(self):
+        self.__private_field1 = "Private field 1"
+        self.__private_field2 = "Private field 2"
+
+    def __private_method(self):
+        print("Private method of class A")
+
+    def main(self):
+        print(self.__private_field1)
+        print(self.__private_field2)
+        self.__private_method()
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        self.__private_field3 = "Private field 3"
+        self.__private_field4 = "Private field 4"
+
+    def __private_method(self):
+        super().__private_method()
+        print("Private method of class B")
+
+    def main(self):
+        super().main()
+        print(self.__private_field3)
+        print(self.__private_field4)
+        self.__private_method()
+
+if __name__ == '__main__':
+    B().main()
+
+
+
+
+
+# 2.
+class A:
+    def __init__(self):
+        self._protected_field1 = "Protected field 1"
+        self._protected_field2 = "Protected field 2"
+
+    def _protected_method(self):
+        print("Protected method of class A")
+
+    def main(self):
+        print(self._protected_field1)
+        print(self._protected_field2)
+        self._protected_method()
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        self._protected_field3 = "Protected field 3"
+        self._protected_field4 = "Protected field 4"
+
+    def _protected_method(self):
+        super()._protected_method()
+        print("Protected method of class B")
+
+    def main(self):
+        super().main()
+        print(self._protected_field3)
+        print(self._protected_field4)
+        self._protected_method()
+
+
+
+
+
+# 3. 
+from public_fields import A, B
+a = A()
+b = B()
+a.public_method()
+b.public_method()
+
+
