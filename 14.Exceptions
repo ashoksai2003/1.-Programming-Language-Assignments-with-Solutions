@@ -1,0 +1,185 @@
+# 1. Write a program to generate Arithmetic Exception without exception handling 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    print(a / b)
+
+divide(1, 0))
+
+
+# ------------------->
+
+
+#  2. Handle the Arithmetic exception using try-catch block 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    try:
+        print(a / b)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+divide(1, 0)
+
+
+# ---------------------->
+
+
+# 3. Write a method which throws exception, Call that method in main class without try block 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    print(a / b)
+
+def main():
+    """The main function that calls the divide function"""
+    divide(1, 0)
+
+if __name__ == "__main__":
+    main()
+
+
+# ---------------------->
+
+
+# 4. Write a program with multiple catch blocks 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    try:
+        print(a / b)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    except TypeError:
+        print("Invalid data type")
+
+divide(1, "0")
+divide(1, 0)
+
+
+# ------------------------>
+
+
+# 5. Write a program to throw exception with your own message 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    print(a / b)
+
+def main():
+    """The main function that calls the divide function"""
+    try:
+        divide(1, 0)
+    except ValueError as e:
+        print("Error message: ", e)
+
+if __name__ == "__main__":
+    main()
+
+
+# ------------------------>
+
+
+# 6. Write a program to create your own exception 
+class MyException(Exception):
+    """A custom exception class that inherits from the Exception class"""
+    pass
+
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    if b == 0:
+        raise MyException("Cannot divide by zero")
+    print(a / b)
+
+def main():
+    """The main function that calls the divide function"""
+    try:
+        divide(1, 0)
+    except MyException as e:
+        print("Error message: ", e)
+
+if __name__ == "__main__":
+    main()
+
+
+# ------------------------>
+
+
+# 7. Write a program with finally block 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    try:
+        print(a / b)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    finally:
+        print("Cleaning up resources...")
+
+divide(1, 0)
+divide(1, 2)
+
+
+# ------------------------>
+
+
+# 8. Write a program to generate Arithmetic Exception 
+def divide(a, b):
+    """A function that divides the first argument by the second argument"""
+    try:
+        print(a / b)
+    except ArithmeticError:
+        print("Cannot divide by zero")
+divide(1, 0)
+
+
+# ------------------------>
+
+
+# 9. Write a program to generate FileNotFoundException 
+try:
+    with open('non_existent_file.txt', 'r') as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("The file does not exist.")
+
+
+# ------------------------>
+
+
+# 10. Write a program to generate ClassNotFoundException 
+try:
+    x
+except NameError:
+    print("Variable 'x' is not defined.")
+
+
+# ------------------------>
+
+
+# 11. Write a program to generate IOException
+try:
+    with open('non_existent_file.txt', 'r') as file:
+        content = file.read()
+        print(content)
+except IOError:
+    print("An I/O error occurred.")
+
+
+# ------------------------>
+
+
+# 12. Write a program to generate NoSuchFieldException
+class MyClass:
+    def __init__(self):
+        self.field1 = 1
+        self.field2 = 2
+
+    def my_method(self):
+        try:
+            print(self.field3)
+        except NoSuchFieldException:
+            print("Field 'field3' is not defined.")
+
+my_obj = MyClass()
+my_obj.my_method()
+
+
