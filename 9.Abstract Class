@@ -1,0 +1,138 @@
+# 1. Create an abstract class with abstract and non-abstract methods.  
+import abc
+class AbstractClass(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def abstract_method(self):
+        """An abstract method that must be overridden by the subclasses"""
+        pass
+    def non_abstract_method(self):
+        """A non-abstract method that can be called on the abstract class"""
+        print("This is a non-abstract method of the abstract class")
+
+class SubClass(AbstractClass):
+
+    def abstract_method(self):
+        """An implementation of the abstract method for the subclass"""
+        print("This is an implementation of the abstract method for the subclass")
+
+if __name__ == '__main__':
+    sub_class_obj = SubClass()
+    sub_class_obj.non_abstract_method()
+    sub_class_obj.abstract_method()
+
+
+
+
+
+# 2. Create a sub class for an abstract class. Create an object in the child class for the  
+abstract class and access the non-abstract methods 
+
+import abc
+
+class AbstractClass(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def abstract_method(self):
+        """An abstract method that must be overridden by the subclasses"""
+        pass
+
+    def non_abstract_method(self):
+        """A non-abstract method that can be called on the abstract class"""
+        print("This is a non-abstract method of the abstract class")
+
+class SubClass(AbstractClass):
+
+    def __init__(self):
+        self.sub_class_field = "This is a field of the subclass"
+
+    def abstract_method(self):
+        """An implementation of the abstract method for the subclass"""
+        print("This is an implementation of the abstract method for the subclass")
+
+    def sub_class_method(self):
+        """A method of the subclass that can be called on an object of the subclass"""
+        print("This is a method of the subclass")
+
+if __name__ == '__main__':
+    sub_class_obj = SubClass()
+    sub_class_obj.non_abstract_method()
+    sub_class_obj.abstract_method()
+    print(sub_class_obj.sub_class_field)
+    sub_class_obj.sub_class_method()
+
+
+
+
+# 3. Create an instance for the child class in child class and call abstract methods 
+import abc
+
+class AbstractClass(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def abstract_method(self):
+        """An abstract method that must be overridden by the subclasses"""
+        pass
+
+    def non_abstract_method(self):
+        """A non-abstract method that can be called on the abstract class"""
+        print("This is a non-abstract method of the abstract class")
+
+class SubClass(AbstractClass):
+
+    def __init__(self):
+        self.sub_class_field = "This is a field of the subclass"
+
+    def abstract_method(self):
+        """An implementation of the abstract method for the subclass"""
+        print("This is an implementation of the abstract method for the subclass")
+
+    def sub_class_method(self):
+        """A method of the subclass that can be called on an object of the subclass"""
+        print("This is a method of the subclass")
+
+if __name__ == '__main__':
+    sub_class_obj = SubClass()
+    sub_class_obj.non_abstract_method()
+
+    # This will raise a TypeError because the abstract method is not implemented
+    sub_class_obj.abstract_method()
+
+    # This will raise a TypeError because the abstract class cannot be instantiated
+    abstract_class_obj = AbstractClass()
+    abstract_class_obj.non_abstract_method()
+    abstract_class_obj.abstract_method()
+
+
+
+
+
+# 4. Create an instance for the child class in child class and call non-abstract methods
+class ParentClass:
+
+    def non_abstract_method(self):
+        """A non-abstract method that can be called on the parent class"""
+        print("This is a non-abstract method of the parent class")
+
+class ChildClass(ParentClass):
+
+    def __init__(self):
+        self.child_field = "This is a field of the child class"
+
+    def child_method(self):
+        """A method of the child class that can be called on an object of the child class"""
+        print("This is a method of the child class")
+
+        # Create an instance of the child class in the child class
+        child_instance = ChildClass()
+
+        # Call the non-abstract method of the parent class on the child instance
+        child_instance.non_abstract_method()
+
+if __name__ == '__main__':
+    child_obj = ChildClass()
+    child_obj.non_abstract_method()
+    child_obj.child_method()
+
+
+
