@@ -1,0 +1,98 @@
+#  1.
+class MyClass:
+    def __init__(self, attribute1, attribute2):
+        """A constructor for MyClass that initializes the attributes of an object"""
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    def display_attributes(self, attribute1=None, attribute2=None):
+        """A method that displays the attributes of an object"""
+        if attribute1 is not None:
+            print(f"Attribute 1: {attribute1}")
+        if attribute2 is not None:
+            print(f"Attribute 2: {attribute2}")
+
+    def display_attributes(self, attribute1, attribute2):
+        """An overloaded method that displays the attributes of an object"""
+        print(f"Attribute 1: {attribute1}")
+        print(f"Attribute 2: {attribute2}")
+
+class Main:
+    def main():
+        """The main function that creates an object of MyClass and displays its attributes"""
+        my_obj = MyClass("Attribute 1 value", "Attribute 2 value")
+        my_obj.display_attributes()  # Calls the first method
+        my_obj.display_attributes("Attribute 1 value", "Attribute 2 value")  # Calls the second method
+
+if __name__ == "__main__":
+    main()
+
+
+--------------------------------->
+
+
+
+# 2.
+
+class MyClass:
+    def __init__(self, attribute1, attribute2):
+        """A constructor for MyClass that initializes the attributes of an object"""
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    def display_attributes(self, attribute1=None, attribute2=None):
+        """A method that displays the attributes of an object"""
+        if attribute1 is not None:
+            print(f"Attribute 1: {attribute1}")
+        if attribute2 is not None:
+            print(f"Attribute 2: {attribute2}")
+
+    def display_attributes(self, attribute1, attribute2_float):
+        """An overloaded method that displays the attributes of an object"""
+        print(f"Attribute 1: {attribute1}")
+        print(f"Attribute 2: {attribute2_float}")
+
+class Main:
+    def main():
+        """The main function that creates an object of MyClass and displays its attributes"""
+        my_obj = MyClass("Attribute 1 value", 3.14)
+        my_obj.display_attributes()  # Calls the first method
+        my_obj.display_attributes("Attribute 1 value", 3.14)  # Calls the second method
+
+if __name__ == "__main__":
+    main()
+
+
+------------------------------------>
+
+
+# 3.
+class MyClass:
+    def __init__(self, attribute1, attribute2):
+        """A constructor for MyClass that initializes the attributes of an object"""
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    def display_attributes(self, attribute1=None, attribute2=None):
+        """A method that displays the attributes of an object"""
+        if attribute1 is not None:
+            print(f"Attribute 1: {attribute1}")
+        if attribute2 is not None:
+            print(f"Attribute 2: {attribute2}")
+
+    def display_attributes(self, attribute1=1, attribute2=2):
+        """An overloaded method that displays the attributes of an object"""
+        print(f"Attribute 1: {attribute1}")
+        print(f"Attribute 2: {attribute2}")
+
+class Main:
+    def main():
+        """The main function that creates an object of MyClass and displays its attributes"""
+        my_obj = MyClass("Attribute 1 value", "Attribute 2 value")
+        my_obj.display_attributes()  # Calls the first method
+        my_obj.display_attributes()  # Calls the second method
+
+if __name__ == "__main__":
+    main()
+
+
