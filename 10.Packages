@@ -1,0 +1,26 @@
+from .class1 import Class1
+from .class2 import Class2
+from my_package import Class1, Class2
+
+class Class1:
+
+    def __init__(self, name):
+        """A constructor for the Class1 class"""
+        self.name = name
+
+    def class1_method(self):
+        """A method of the Class1 class"""
+        print(f"This is a method of Class1, called on an object with name {self.name}")
+class Class2:
+    def __init__(self, age):
+        """A constructor for the Class2 class"""
+        self.age = age
+
+    def class2_method(self):
+        """A method of the Class2 class"""
+        print(f"This is a method of Class2, called on an object with age {self.age}")
+class1_obj = Class1("Obj1")
+class1_obj.class1_method()
+
+class2_obj = Class2(25)
+class2_obj.class2_method()
