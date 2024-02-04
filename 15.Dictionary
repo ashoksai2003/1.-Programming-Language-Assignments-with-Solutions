@@ -1,0 +1,44 @@
+class Student:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+students = {
+    1: Student(1, "John Doe"),
+    2: Student(2, "Jane Doe"),
+    3: Student(3, "Jim Smith"),
+    4: Student(4, "Jill Smith"),
+    5: Student(5, "Jack Doe")
+}
+
+# 1.1  Adding the values in dictionary
+students[6] = Student(6, "Jill Johnson")
+
+# 1.2  Updating the values in dictionary
+students[1] = Student(1, "John Doe Jr.")
+
+# 1.3  Accessing the value in dictionary
+print(students[2].name)
+
+# 1.4  Creating a nested loop dictionary
+nested_dict = {
+    "math": {
+        1: 90,
+        2: 80,
+        3: 70
+    },
+    "english": {
+        1: 85,
+        2: 95,
+        3: 88
+    }
+}
+
+# 1.5  Accessing the values of nested loop dictionary
+print(nested_dict["math"][2])
+
+#1.6   Print the keys present in a particular dictionary
+print("The keys present in the students dictionary are: ", students.keys())
+
+# 1.7  Delete a value from a dictionary
+del students[1]
