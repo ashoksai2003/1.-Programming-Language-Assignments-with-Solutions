@@ -1,0 +1,141 @@
+# 1. Different ways creating a string
+str1 = 'Hello, World!'
+str2 = "Hello, World!"
+str3 = '''
+Multiline
+String
+Example
+'''
+name = 'John'
+age = 25
+str4 = 'Name: {}, Age: {}'.format(name, age)    # using format method.
+list1 = ['H', 'e', 'l', 'l', 'o']   # using list comprehension.
+str7 = ''.join(list1)
+
+
+
+
+# 2. Concatenating two strings using + operator
+str1 = "Hello"
+str2 = "World"
+result = str1 + " " + str2
+print(result)  # Output: Hello World
+
+
+
+
+# 3. Finding the length of the string
+str = ""
+str_len = len(str)
+
+
+
+
+# 4.Extract a string using Substring
+s = "Hello, World!"
+substring = s[7:11]
+print(substring)  # Output: World
+
+
+
+
+# 5. Searching in strings using index()
+s = "Hello, World!"
+index = s.index("World")
+print(index)  # Output: 7
+
+
+
+
+# 6. Matching a String Against a Regular Expression With matches()
+import re
+pattern = r'\d+$'
+string = "12345"
+if re.match(pattern, string):
+    print("Match found")
+else:
+    print("Match not found")
+
+
+
+  
+# 7. Comparing strings
+str1 = "Hello"
+str2 = "World"
+str3 = "Hello"
+if str1 < str2:
+    print(str1, "comes before", str2)
+elif str1 > str2:
+    print(str1, "comes after", str2)
+else:
+    print(str1, "is equal to", str2)
+if str1 < str3:
+    print(str1, "comes before", str3)
+elif str1 > str3:
+    print(str1, "comes after", str3)
+else:
+    print(str1, "is equal to", str3)
+
+
+
+  
+# 8. startsWith(), endsWith() and compareTo()
+str1 = "Hello, World!"
+if str1.startswith("Hello"):
+    print("String starts with 'Hello'")
+str1 = "Hello, World!"
+if str1.endswith("World!"):
+    print("String ends with 'World!'")
+from functools import compare
+str1 = "Apple"
+str2 = "Banana"
+result = compare(str1, str2)
+if result < 0:
+    print(str1, "comes before", str2)
+elif result == 0:
+    print(str1, "is equal to", str2)
+else:
+    print(str1, "comes after", str2)
+
+
+
+  
+# 9. Trimming strings with strip()
+str1 = "   Hello, World!   "
+str2 = str1.strip()
+print(str2)
+
+
+
+  
+# 10. Replacing characters in strings with replace()
+str1 = "Hello, World!"
+str2 = str1.replace("World", "Python")
+print(str2)
+
+
+
+  
+# 11. Splitting strings with split()
+str1 = "Hello, World!"
+arr = str1.split(",")
+print(arr)
+
+
+
+  
+#12. Converting integer objects to Strings
+num = 123
+str_num = str(num)
+print(type(str_num))
+print(str_num)
+
+
+
+  
+# 13. Converting to uppercase and lowercase
+str1 = "Hello, World!"
+str2 = str1.upper()
+str3 = str1.lower()
+print(str2)
+print(str3)
